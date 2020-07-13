@@ -6,7 +6,7 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      
+
     }
   }
   render() {
@@ -18,8 +18,5 @@ class App extends React.Component{
   }
 }
 
-// const mapStateToProps = state => ({
-//   movies: state
-// })
 
 export default withRouter(App);
