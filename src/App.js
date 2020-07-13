@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {withRouter} from 'react-router-dom';
+import Routes from './routing/routes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      
+    }
+  }
+  render() {
+    return (
+      <div>
+      <Routes/>
+      </div>
+    )
+  }
 }
 
-export default App;
+// const mapStateToProps = state => ({
+//   movies: state
+// })
+
+export default withRouter(App);
