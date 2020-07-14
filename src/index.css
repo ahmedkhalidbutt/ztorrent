@@ -2,3 +2,16 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.carousel.carousel-slider {
+    height: 55vh;
+}
+
+@media (max-width: 600px) {
+    .card-carousel > .carousel-slider {
+        height: 15vh;
+    }
+  }
+.card-carousel > .carousel-slider {
+    height: 25vh;
+}

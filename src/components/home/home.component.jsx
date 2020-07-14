@@ -1,28 +1,44 @@
-import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 
 import { fetchMovies } from "../../redux/actions/moviesActions";
-import { MoviesList } from "../moviesList/moviesList.component";
-import { Grid, Typography } from "@material-ui/core";
+import Carousal from "../carousel/carousel.componet";
+import { Grid, makeStyles } from "@material-ui/core";
+import { useEffect } from "react";
+import CardCarousel from "../cardCarousel/cardCarousel.componet";
+// import MoviesList from "../moviesList/moviesList.component"
 
-class Home extends Component {
-	componentDidMount() {
-		this.props.dispatch(fetchMovies());
+const useStyles = makeStyles((theme) => ({
+	main: {
+		[theme.breakpoints.up("sm")]: {},
+	},
+}));
+
+const Home = (props) => {
+	const dispatch = useDispatch();
+	function fetchData() {
+		dispatch(fetchMovies())
 	}
-	render() {
-		return (
-			<Grid container>
+	useEffect(() => {
+		fetchData()
+	}, []);
+
+	const classes = useStyles()
+
+	return (
+		<>
+			{/* <Typography variant="h3" style={{ textAlign: "center" }}>
+					LATEST
+				</Typography> */}
+			<Grid container className="main">
 				<Grid item sm={12}>
-					<Typography variant="h3" style={{textAlign: 'center'}} >LATEST</Typography>
-				</Grid>
-				<Grid item style={{ width: "1240px", margin: "0 auto" }}>
-					<MoviesList />
+					<Carousal />
 				</Grid>
 			</Grid>
-		);
-	}
-}
-const mapStateToProps = (state) => ({
-	movies: state.movies,
-});
-export default connect(mapStateToProps)(Home);
+					{/* <MoviesList limit={4} /> */}
+				<CardCarousel />
+
+		</>
+	);
+};
+export default Home;

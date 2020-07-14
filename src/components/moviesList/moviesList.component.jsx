@@ -3,14 +3,11 @@ import { useSelector } from 'react-redux';
 import MovieCard from '../movieCard/movieCard.component'
 import Grid from '@material-ui/core/Grid';
 
-export const MoviesList = () => {
+export default ({limit}) => {
     const movies = useSelector(state => state.movies.data)
-    console.log('====================================');
-    console.log(movies);
-    console.log('====================================');
     return(
-        <Grid container>
-            {movies.map(movie => <Grid item sm={4} key={movie.id}>
+        <Grid container style={{width: '80%', margin: '0 auto'}}>
+            {movies.slice(0, limit ?? movies.length).map(movie => <Grid item sm={3} key={movie.id}>
                 <MovieCard data={movie} />
             </Grid>)}
             

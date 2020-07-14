@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
   root: {
     maxWidth: "90%",
+    margin: '10px auto',
     backgroundColor: '#999990'
   },
   media: {
@@ -24,29 +25,29 @@ export default ({data}) => {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea component={Link} to={`/movie/${data.slug}`}>
         <CardMedia
           className={classes.media}
           image={data.medium_cover_image}
           title="Contemplative Reptile"
         />
-        <CardContent>
+        {/* <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {data.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {data.summary.slice(0, 100)}
           </Typography>
-        </CardContent>
+        </CardContent> */}
       </CardActionArea>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small" color="primary">
           Share
         </Button>
-        <Button size="small" color="primary">
+        <Button component={Link} to={`/movie/${data.slug}`} size="small" color="primary">
           Visit
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }
