@@ -2,7 +2,7 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { useSelector } from "react-redux";
 import "./cardCarousel.styles.css";
-import Slider from "@bit/akiran.react-slick.slider";
+import Slider from "../akiran.react-slick.slider";
 import { useHistory } from "react-router-dom";
 
 const CardCarousel = () => {
