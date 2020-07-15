@@ -1,0 +1,22 @@
+.movie-cover{
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20vw;
+}
+.movie-content{
+    margin-left: 10vw;
+}
+.movie-detail{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.MuiRating-readOnly{
+    padding-top: 15px;
+}
+.cover-image img{
+    height: 65vh;
+}
+.play-button-div{
+    margin-top: 5vh;
+}

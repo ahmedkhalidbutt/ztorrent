@@ -1,14 +1,8 @@
-import React from "react";
-import { Grid } from "@material-ui/core";
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { MovieDetail } from  "../../components/movieDetail/movieDetail.component"
 
-export default () => {
-    const {slug} = useParams()
-    const movie = useSelector(state => state.movies.data.filter(movie => movie.slug === slug))
-	return <Grid container>
-        <Grid item>
-            <pre> {JSON.stringify(movie[0], null, 2)} </pre>
-        </Grid>
-    </Grid>;
-};
+
+const MoviesDetailPage = () => {
+    return <MovieDetail/>
+}
+export default MoviesDetailPage

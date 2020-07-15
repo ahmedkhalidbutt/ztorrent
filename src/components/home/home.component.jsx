@@ -2,43 +2,30 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 import { fetchMovies } from "../../redux/actions/moviesActions";
-import Carousal from "../carousel/carousel.componet";
-import { Grid, makeStyles } from "@material-ui/core";
+import Carousal from "../carousel/carousel.component";
+import { Grid } from "@material-ui/core";
 import { useEffect } from "react";
-import CardCarousel from "../cardCarousel/cardCarousel.componet";
-// import MoviesList from "../moviesList/moviesList.component"
+import CardCarousel from "../cardCarousel/cardCarousel.component";
 
-const useStyles = makeStyles((theme) => ({
-	main: {
-		[theme.breakpoints.up("sm")]: {},
-	},
-}));
 
 const Home = (props) => {
-	const dispatch = useDispatch();
-	function fetchData() {
-		dispatch(fetchMovies())
-	}
-	useEffect(() => {
-		fetchData()
-	}, []);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    function fetchData() {
+      dispatch(fetchMovies());
+    }
+    fetchData();
+  }, [dispatch]);
 
-	const classes = useStyles()
-
-	return (
-		<>
-			{/* <Typography variant="h3" style={{ textAlign: "center" }}>
-					LATEST
-				</Typography> */}
-			<Grid container className="main">
-				<Grid item sm={12}>
-					<Carousal />
-				</Grid>
-			</Grid>
-					{/* <MoviesList limit={4} /> */}
-				<CardCarousel />
-
-		</>
-	);
+  return (
+    <>
+      <Grid container className="main">
+        <Grid item sm={12}>
+          <Carousal />
+        </Grid>
+      </Grid>
+      <CardCarousel />
+    </>
+  );
 };
 export default Home;
