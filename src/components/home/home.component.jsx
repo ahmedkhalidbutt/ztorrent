@@ -1,18 +1,31 @@
-import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 
 import { fetchMovies } from "../../redux/actions/moviesActions";
+import Carousal from "../carousel/carousel.component";
+import { Grid } from "@material-ui/core";
+import { useEffect } from "react";
+import CardCarousel from "../cardCarousel/cardCarousel.component";
 
-class Home extends Component {
-  componentDidMount() {
-    this.props.dispatch(fetchMovies());
-  }
-  render() {
-    console.log(this.props.movies.data);
-    return <Fragment></Fragment>;
-  }
-}
-const mapStateToProps = (state) => ({
-  movies: state.movies,
-});
-export default connect(mapStateToProps)(Home);
+
+const Home = (props) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    function fetchData() {
+      dispatch(fetchMovies());
+    }
+    fetchData();
+  }, [dispatch]);
+
+  return (
+    <>
+      <Grid container className="main">
+        <Grid item sm={12}>
+          <Carousal />
+        </Grid>
+      </Grid>
+      <CardCarousel />
+    </>
+  );
+};
+export default Home;

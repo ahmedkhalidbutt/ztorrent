@@ -1,14 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import HomePage from '../pages/home/homepage.component';
+import HomePage from '../pages/home';
+import MovieDetailsPage from '../pages/MovieDetails';
+import Navbar from '../components/navbar/navbar.component';
 
 const Routes  = () => {
     return (
         <Router>
+          <Navbar />
           <Switch>
-            <Route path="/">
-              <HomePage />
-            </Route>
+            <Route path="/" exact children={<HomePage />} />
+            <Route path="/movie/:slug" children={<MovieDetailsPage />} />
           </Switch>
       </Router>
     )
