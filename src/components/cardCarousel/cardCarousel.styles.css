@@ -1,7 +1,6 @@
 .carousel-container {
     margin: 10px auto;
-    padding: 0px 40px 40px 40px;
-    width: 100%;
+    width: 95%;
     text-align: center;
   }
   .slick-next:before, .slick-prev:before {

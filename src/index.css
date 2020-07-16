@@ -20,3 +20,7 @@ a{
     color: whitesmoke;
 }
 
+.read-more-button {
+    color: #f50057 !important;
+    margin-top: 5px;
+}
