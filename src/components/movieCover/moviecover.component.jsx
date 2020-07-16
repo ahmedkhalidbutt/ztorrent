@@ -67,7 +67,7 @@ const MovieCover = (props) => {
 						/>
 						<span></span>
 					</div>
-					<Grid container>
+					<Grid container spacing={3}>
 						<Grid item xs={"auto"}>
 							<p>{props.year}</p>
 						</Grid>
