@@ -1,0 +1,21 @@
+.carousel-container {
+    margin: 10px auto;
+    width: 95%;
+    text-align: center;
+  }
+  .slick-next:before, .slick-prev:before {
+      color: #000;
+  }
+
+@media (max-width: 600px) {
+    .card-carousel > .carousel-slider {
+        height: 15vh;
+    }
+  }
+.card-carousel > .carousel-slider {
+    height: 25vh;
+}
+
+.card-carousel{
+    margin-top: 20px;
+}
