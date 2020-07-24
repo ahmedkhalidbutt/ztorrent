@@ -6,15 +6,17 @@ var WebTorrent = require("webtorrent");
 const PlayMovie = () => {
   const selectedMovieObj = useSelector((state) => state.selected.data);
   const { movie, url } = selectedMovieObj;
+  let client;
   useEffect(() => {
     // returned function will be called on component unmount
     return () => {
+      client.destroy();
       let movieDiv = document.getElementById("movie-div");
       movieDiv.innerHTML = "";
     };
-  }, []);
+  }, [client]);
   if (url || movie) {
-    var client = new WebTorrent();
+    client = new WebTorrent();
     var torrentId = "https://webtorrent.io/torrents/sintel.torrent";
     client.add(torrentId, function (torrent) {
       var file = torrent.files.find(function (file) {
