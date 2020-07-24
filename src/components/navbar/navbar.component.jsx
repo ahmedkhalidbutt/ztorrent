@@ -12,6 +12,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import MenuIcon from '@material-ui/icons/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Link } from 'react-router-dom';
 
@@ -169,6 +170,14 @@ const Navbar = () => {
     <div className={classes.grow}>
       <AppBar position="static" color="transparent">
         <Toolbar>
+        <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+          >
+            <MenuIcon />
+          </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             <Link to='/'>vTorrent</Link>
           </Typography>

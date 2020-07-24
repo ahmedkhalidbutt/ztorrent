@@ -2,7 +2,7 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { useSelector } from "react-redux";
 import "./cardCarousel.styles.css";
-import Slider from "../@bit/akiran.react-slick.slider";
+import Slider from "react-slick";
 import Image from 'material-ui-image';
 import { useHistory } from "react-router-dom";
 
@@ -21,12 +21,13 @@ const CardCarousel = () => {
     history.push(`/movie/${slug}`)
   }
 
-  let moviesDiv = movies.map((movie) => (
+  let moviesDiv = movies.map((movie,i) => (
       <Image
         disableSpinner
         onClick={() => handleClick(movie.slug)}
         src={movie.medium_cover_image}
         aspectRatio={9/16}
+        key={i}
       />
   ));
   return (
