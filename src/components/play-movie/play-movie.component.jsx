@@ -13,7 +13,7 @@ const PlayMovie = () => {
       movieDiv.innerHTML = "";
     };
   }, []);
-  if (url) {
+  if (url || movie) {
     var client = new WebTorrent();
     var torrentId = "https://webtorrent.io/torrents/sintel.torrent";
     client.add(torrentId, function (torrent) {
