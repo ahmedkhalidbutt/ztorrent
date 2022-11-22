@@ -22,7 +22,7 @@
     "react-redux": "^7.2.0",
     "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-slick": "^0.27.0",
     "read-more-react": "^1.0.10",
     "redux": "^4.0.5",
